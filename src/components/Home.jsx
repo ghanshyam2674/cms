@@ -1,48 +1,32 @@
-import React, { useState } from 'react'
-import axios from 'axios';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { Outlet, useNavigate } from 'react-router-dom';
+import SideNavbar from './SideNavbar';
+
 
 const Home = () => {
-  const [input, setInput] = useState({
-    email: "",
-    complaint: ""
-  })
 
-  const HandleInput = (e) => {
-    const name = e.target.name;
-    const value = e.target.value;
-    setInput((values) => ({ ...values, [name]: value }))
-  }
+  const Nav = useNavigate()
+  const user = useSelector((state) => state.stulogin)
 
-  const HandleComplain = (e) => {
-    e.preventDefault();
-    const url = `http://localhost:4000/complaints`;
-    axios.post(url, input).then((res) => { 
-      setInput({
-        email: "",
-        complaint: ""
-      })
-    })
-  }
+  useEffect(() => {
+    if (user.stuuser === "") {
+      Nav('/login')
+    }
+  }, [])
+
 
   return (
     <>
-      <div className="w-full h-[90vh] flex">
-        <div className="bg-black w-[18%] h-[100%]">khj</div>
-        <div className="w-[82%] h-[100%] flex justify-center items-center">
-          <form action="" method='post' className='login-form text-black' onSubmit={(e) => HandleComplain()}>
-            {/* <h1>Login</h1> */}
-            <div className="">
-              <label htmlFor="email">Email :</label>
-              <input type="email" placeholder='email' name="email" id="email" onChange={HandleInput} value={input.email} className='text-black' />
-            </div>
-            <div className="">
-              <label htmlFor="complaint">complaint :</label>
-              <textarea type="text" placeholder='complaint' name="complaint" id="complaint" onChange={HandleInput} value={input.complaint} className='text-black' ></textarea>
-            </div>
-            <button type='submit'>Submit</button>
-          </form>
-        </div>
+
+      <div className="min-h-screen flex w-full">
+        <SideNavbar />
+        {/* <div className="w-full bg-gray-100 p-4 grid grid-cols-1 gap-4 place-content-center place-items-center"> */}
+        {/* <h1 className="text-2xl font-bold mb-4">Welcome to the Student Dashboard</h1> */}
+        <Outlet />
+        {/* </div> */}
       </div>
+
     </>
   )
 }

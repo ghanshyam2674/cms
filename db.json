@@ -1,20 +1,101 @@
 {
   "students": [
     {
+      "name": "ghanshyam sharma ji",
+      "email": "ghanshyamsharmaji24@gmail.com",
+      "password": "123",
+      "id": 1,
+      "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80"
+    },
+    {
+      "name": "shyam sharma",
+      "email": "email@gmail.com",
+      "password": "234325",
+      "user": "student",
+      "id": 2
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "image": "",
+      "user": "student",
+      "id": 3
+    }
+  ],
+  "complaints": [
+    {
+      "subject": "laptop",
+      "complaint": "i have no laptop",
+      "date": "19 01 2024 15:52",
+      "stuid": 1,
+      "status": "resolve",
+      "id": 1,
+      "reply": "we arranage a laptop for you soon"
+    },
+    {
+      "subject": "",
+      "complaint": "",
+      "date": "19 01 2024 23:3",
+      "stuid": 1,
+      "status": "panding",
+      "id": 2
+    },
+    {
+      "subject": "",
+      "complaint": "",
+      "date": "19 01 2024 23:4",
+      "stuid": 1,
+      "status": "panding",
+      "id": 3
+    },
+    {
+      "subject": "",
+      "complaint": "",
+      "date": "19 01 2024 23:4",
+      "stuid": 1,
+      "status": "panding",
+      "id": 4
+    },
+    {
+      "subject": "laptop",
+      "complaint": "laptop kho gaya mera",
+      "date": "19 01 2024 23:13",
+      "stuid": 1,
+      "status": "panding",
+      "": "j",
+      "id": 5
+    },
+    {
+      "subject": "laptop",
+      "complaint": "hello",
+      "date": "19 01 2024 23:15",
+      "stuid": 1,
+      "status": "panding",
+      "id": 6
+    }
+  ],
+  "admin": [
+    {
       "name": "ghanshyam sharma",
       "email": "ghanshyamsharmaji24@gmail.com",
       "password": "123",
-      "id": 1
+      "id": 1,
+      "image": "https://imgd.aeplcdn.com/310x174/n/cw/ec/130591/fronx-exterior-right-front-three-quarter-109.jpeg?isig=0&q=80"
+    },
+    {
+      "name": "Ghanshyam Sharma",
+      "email": "shyam@gmail.com",
+      "password": "123",
+      "user": "admin",
+      "id": 2
+    },
+    {
+      "name": "sharma ji",
+      "email": "sharma@gmail.com",
+      "password": "123",
+      "image": "",
+      "id": 3
     }
-  ],
-
-  "complaints": [{
-    
-  }
-    
-  ],
-
-  "admin":[
-    
   ]
 }

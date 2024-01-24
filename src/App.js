@@ -6,6 +6,15 @@ import Contect from './components/Contect'
 import Layout from './components/Layout'
 import Login from './components/Login'
 import Signup from './components/Signup'
+import ShowStuData from './components/ShowStuData'
+import AdminDashboard from './components/AdminDashboard'
+import Reply from './components/Reply'
+import StuProfile from './components/StuProfile'
+import Complaint from './components/Complaint'
+import StuProfileData from './components/StuProfileData'
+import AdminProfile from './components/AdminProfile'
+import ForgotPassword from './components/ForgotPassword'
+import ErrorPage from './components/ErrorPage'
 
 const App = () => {
   return (
@@ -13,12 +22,23 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='home' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='contect' element={<Contect />} />
-          <Route path='login' element={<Login />} />
-          <Route path='signup' element={<Signup />} />
+          <Route path='/contect' element={<Contect />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/forgotpassword' element={<ForgotPassword />} />
+          <Route path='/home' element={<Home />} >
+            <Route index element={<Complaint />} />
+            <Route path='studata' element={<StuProfile />} />
+            <Route path='stuprofile' element={<StuProfileData />} />
+          </Route>
+          <Route path='/admin' element={<AdminDashboard />}>
+            <Route index element={<ShowStuData />} />
+            <Route path='adminprofile' element={<AdminProfile />} />
+            <Route path='reply/:id' element={<Reply />} />
+          </Route>
         </Route>
+        <Route path='*' element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   )
