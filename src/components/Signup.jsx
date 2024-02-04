@@ -39,7 +39,7 @@ const Signup = () => {
                         user: "student"
                     })
                 } else {
-                    if (input.image.length > 10) {
+                    if (input.image.length > 200) {
                         alert("Image URL is too long (maximum 80 characters allowed).");
                         return;
                     } else {
@@ -107,10 +107,10 @@ const Signup = () => {
                     {/* Replace this with the actual image */}
 
 
-                    {/* <svg className="w-24 h-24 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <svg className="w-24 h-24 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg> */}
-                    <img src={input.image} alt="" />
+                    </svg>
+                    {/* <img src={input.image} alt="" /> */}
 
                 </div>
                 <form className="w-1/2 pl-4" onSubmit={(e) => HandleSubmit(e)}>

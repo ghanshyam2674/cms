@@ -1,18 +1,36 @@
 import axios from 'axios'
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import { stuLogin } from '../slices/Loginslice'
 import { adminLogin } from '../slices/adminLogin'
 
 const Login = () => {
+
+    const user = useSelector((state) => state.stulogin)
+    const Nav = useNavigate()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        if (user.stuauth) {
+            Nav('/home')
+        }
+    }, [user.stuauth])
+
+    useEffect(() => {
+        if (user.adminauth) {
+            Nav('/admin')
+        }
+    }, [user.adminauth])
+
+    console.log(user.adminauth);
+
+
     const [input, setInput] = useState({
         email: "",
         password: "",
         user: "student"
     })
-    const Nav = useNavigate()
-    const dispatch = useDispatch()
 
     const HandleInput = (e) => {
         const name = e.target.name;
@@ -20,7 +38,7 @@ const Login = () => {
         setInput((values) => ({ ...values, [name]: value }))
     }
 
-    console.log(input)
+    // console.log(input)
     var email = input.email;
     var password = input.password;
     const HandleForm = (e) => {
@@ -64,10 +82,10 @@ const Login = () => {
                                 user: "admin"
                             })
                             Nav("/admin")
-                        }else{
+                        } else {
                             alert("password wrong")
                         }
-                    }else{
+                    } else {
                         alert("email wrong")
                     }
                 } else {
@@ -83,7 +101,7 @@ const Login = () => {
         <>
             <div className="h-screen w-full flex justify-center items-center">
                 <div className="min-h-screen w-full bg-gradient-to-br from-purple-700 to-purple-300 flex items-center justify-center">
-                    <form className="bg-white p-8 rounded-lg shadow-md w-96" onSubmit={(e) => HandleForm(e)}>
+                    <form className="bg-white p-8  w-[90%]  rounded-lg shadow-md sm:w-96" onSubmit={(e) => HandleForm(e)}>
                         <div className="flex justify-center items-center mb-4">
                             <div className="bg-gray-200 p-2 rounded-full">
                                 <svg className="w-8 h-8 text-gray-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">

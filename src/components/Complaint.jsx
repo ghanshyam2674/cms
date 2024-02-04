@@ -48,49 +48,16 @@ const Complaint = () => {
     //     Nav('/login')
     // }
     return (
-        <>
-            {/* <div className="min-h-screen bg-gradient-to-br from-purple-700 to-purple-300 p-4"> */}
-            {/* <h1 className="text-2xl font-bold mb-4 text-white">Register and View Complaints</h1> */}
-            {/* <div className="min-h-screen grid grid-cols-1 gap-4 place-content-center place-items-center"> */}
-                <div className="bg-white p-4 rounded-lg shadow-md h-full">
-                    <h2 className="text-xl font-bold mb-2">Register Complaint</h2>
-                    <form onSubmit={HandleComplain}>
-                        <input className="w-full py-2 px-3 rounded-md border border-gray-300 mb-4" type="text" placeholder="Subject" name='subject' value={input.subject} onChange={HandleInput} />
-                        <textarea className="w-full h-32 p-2 border border-gray-300 rounded-md mb-2" placeholder="Write your complaint here..." onChange={HandleInput} name='complaint' value={input.complaint}></textarea>
-                        <button className="w-full py-2 px-4 bg-blue-500 text-white rounded-md" type='submit'>Submit</button>
-                    </form>
-                </div>
-                {/* <div className="bg-white p-4 rounded-lg shadow-md">
-                        <h2 className="text-xl font-bold mb-2">Your Complaints</h2>
-                        <select className="w-full py-2 px-3 rounded-md border border-gray-300 mb-2">
-                            <option value="">Sort by...</option>
-                            <option value="date">Date</option>
-                            <option value="status">Status</option>
-                        </select>
-                        <table className="w-full text-left border-collapse">
-                            <thead>
-                                <tr>
-                                    <th className="py-2 px-4 border border-gray-300">S.No</th>
-                                    <th className="py-2 px-4 border border-gray-300">Complaint Subject</th>
-                                    <th className="py-2 px-4 border border-gray-300">Complaint</th>
-                                    <th className="py-2 px-4 border border-gray-300">Reply</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {complaints.map((complaint) => (
-                                    <tr key={complaint.sno}>
-                                        <td className="py-2 px-4 border border-gray-300">{complaint.sno}</td>
-                                        <td className="py-2 px-4 border border-gray-300">{complaint.subject}</td>
-                                        <td className="py-2 px-4 border border-gray-300">{complaint.complaint}</td>
-                                        <td className="py-2 px-4 border border-gray-300">{complaint.reply}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
-                    </div> */}
-                {/* </div> */}
-            {/* </div> */}
-        </>
+        <div className='w-full h-screen bg-gray-100 flex items-center justify-center'>
+            <div className="bg-white p-4 rounded-lg shadow-md ">
+                <h2 className="text-xl font-bold mb-2">Register Complaint</h2>
+                <form onSubmit={HandleComplain}>
+                    <input className="w-full py-2 px-3 rounded-md border border-gray-300 mb-4" type="text" placeholder="Subject" name='subject' value={input.subject} onChange={HandleInput} />
+                    <textarea className="w-full h-32 p-2 border border-gray-300 rounded-md mb-2" placeholder="Write your complaint here..." onChange={HandleInput} name='complaint' value={input.complaint}></textarea>
+                    <button className="w-full py-2 px-4 bg-blue-500 text-white rounded-md" type='submit'>Submit</button>
+                </form>
+            </div>
+        </div>
     )
 }
 

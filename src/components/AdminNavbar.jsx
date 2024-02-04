@@ -1,5 +1,5 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import 'tailwindcss/tailwind.css';
 import { adminLogout } from '../slices/adminLogin';
@@ -7,11 +7,13 @@ import { adminLogout } from '../slices/adminLogin';
 const AdminNavbar = () => {
     const Nav = useNavigate()
     const Dispatch = useDispatch()
+    const user = useSelector((state) => state.stulogin)
 
     const Logout = () => {
         Dispatch(adminLogout())
         Nav('/login')
     }
+
     return (
         <div className="h-screen w-64 bg-gradient-to-br from-purple-700 to-purple-300 text-white p-4">
             <h1 className="text-2xl font-bold mb-4">Student Dashboard</h1>
