@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
-import { Outlet, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { stuLogout } from '../slices/Loginslice';
+import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 
 const Complaint = () => {
@@ -43,10 +42,6 @@ const Complaint = () => {
         })
     }
 
-    // const logoutuser = () => {
-    //     Distpatch(stuLogout())
-    //     Nav('/login')
-    // }
     return (
         <div className='w-full h-screen bg-gray-100 flex items-center justify-center'>
             <div className="bg-white p-4 rounded-lg shadow-md ">
